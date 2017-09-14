@@ -1,0 +1,183 @@
+@import 'normalize';
+@import 'reset';
+@import 'basic';
+
+
+
+
+/* And here follows your custom CSS */
+
+/* ------------------------------------ */
+/* Please declare the @font-face and    */
+/* use it later for body in a font size */
+/* aquivalent to 16px                   */
+/* ------------------------------------ */
+
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont-regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont-bold.woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont-italic.woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont-bolditalic.woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
+/* ------------------------------------ */
+/* body                                 */
+/*                                      */
+/* declare font.                        */
+/* make min-height 100% of viewport for */
+/* so called "sticky footer".           */
+/* define properties for the base layout*/
+/* ------------------------------------ */
+
+body {
+  font: 1em/1.6 'webfont', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------ */
+/* #page-main                           */
+/* ------------------------------------ */
+
+#page-main {
+  flex: 1;
+}
+
+/* ------------------------------------ */
+/* #page-header and -footer common      */
+/* ------------------------------------ */
+
+#page-header,
+#page-footer {
+  background: black;
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ------------------------------------ */
+/* #page-logo                           */
+/* ------------------------------------ */
+
+#page-logo {
+  width: 7.5rem;
+  height: 5rem;
+  background: transparent url('../images/dci.png') no-repeat center center;
+  background-size: contain;
+  text-indent: -999em;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* ------------------------------------ */
+/* #page-header and -footer nav/ul/ etc */
+/* ------------------------------------ */
+
+#page-header nav,
+#page-footer nav {
+  font-weight: bold;
+}
+
+#page-header a,
+#page-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#page-header ul,
+#page-footer ul {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-header li a,
+#page-footer li a {
+  display: block;
+  width: 100%;
+  padding: .75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#page-header li:last-child a,
+#page-footer li:last-child a {
+  border-bottom: none;
+}
+
+/* ------------------------------------ */
+/* overrides for #page-footer           */
+/* ------------------------------------ */
+#page-footer ul {
+  justify-content: space-between;
+}
+
+
+
+
+/* -------------------------------------- */
+/* media query for desktop/bigger devices */
+/* -------------------------------------- */
+
+
+@media screen and (min-width: 640px) {
+
+  #page-header,
+  #page-footer {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  #page-header nav,
+  #page-footer nav {
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: .25rem;
+    width: 1000px;
+  }
+
+  #page-header nav {
+    width: calc(1000px - 7.5rem);
+  }
+
+  #page-header ul,
+  #page-footer ul {
+    flex-direction: row;
+  }
+
+  #page-header li a,
+  #page-footer li a {
+    display: inline-block;
+    border-bottom: none;
+    text-align: left;
+  }
+
+}
+
